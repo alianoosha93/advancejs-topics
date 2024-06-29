@@ -1,0 +1,186 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Switch Properties Example</title>
+<style>
+    /* <------ switch------>
+      body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  } */
+
+  /* <------Promis example (with delay)----->     */
+
+  /* body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .result {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .success {
+    background-color: #cfe2d7;
+    border: 1px solid #3b8686;
+  }
+  .error {
+    background-color: #f8d7da;
+    border: 1px solid #a94442;
+  } */
+
+
+   /* <------- callback ftn-----> */
+   /* body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .result {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .success {
+    background-color: #cfe2d7;
+    border: 1px solid #3b8686;
+  }
+  .error {
+    background-color: #be1c1c;
+    border: 1px solid #5c0808;
+  } */
+
+
+
+   /* <-------ternary operator    (if/else condtion)------> */
+
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .result {
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .success {
+    background-color: #46a06b;
+    border: 1px solid #043319;
+  }
+  .error {
+    background-color: #f8d7da;
+    border: 1px solid #a94442;
+  }
+</style>
+</head>
+<body>
+
+<!-- <h1>Switch Properties Example</h1>
+
+<div id="propertyResult" class="result"></div>
+
+<script>
+  let property = ">=40";
+  let result = "";
+
+  switch (property) {
+    case "<20":
+      result = "The weather is cold";
+      break;
+    case ">=40":
+      result = "The weather is hot";
+      break;
+    case "50":
+      result = "The weather is to hot ";
+      break;
+    default:
+      result = "weather is to cold";
+      break;
+  }
+
+  document.getElementById("propertyResult").textContent = result; -->
+
+
+ <!---------Promis example (with delay) ------>
+
+  <!-- <h1>Promise Example</h1>
+
+  <div id="promiseResult" class="result">Loading...</div>
+  
+  <script>
+    const fetchData = new Promise((resolve, reject) => {
+      // Simulate an asynchronous operation
+      setTimeout(() => {
+        const isError = false; // Change this to simulate error condition
+        if (!isError) {
+          const data = "Welcome back";
+          resolve(data);
+        } else {
+          reject('An error occurred');
+        }
+      }, 1000);
+    });
+  
+    fetchData.then((data) => {
+      document.getElementById("promiseResult").textContent = data;
+      document.getElementById("promiseResult").classList.add('success');
+    }).catch((error) => {
+      document.getElementById("promiseResult").textContent = "Error occurred";
+      document.getElementById("promiseResult").classList.add('error');
+    }); -->
+
+    <!--------callback ftn-------->
+    <!-- <h1>Callback Function Example</h1>
+
+  <button id="triggerButton">Click to Trigger Callback</button>
+  <div id="outputResult" class="result">Loading...</div>
+  
+  <script>
+    const callbackFunction = (isSuccess) => {
+      const resultElement = document.getElementById("outputResult");
+      if (isSuccess) {
+        resultElement.textContent = "Callback Success!";
+        resultElement.classList.add('success');
+        resultElement.classList.remove('error');
+      } else {
+        resultElement.textContent = "Callback Error!";
+        resultElement.classList.add('error');
+        resultElement.classList.remove('success');
+      }
+    };
+
+    document.getElementById("triggerButton").addEventListener("click", () => {
+      
+      const isSuccess = false; 
+      callbackFunction(isSuccess);
+    }); -->
+
+    <!--------- ternary operator   (if/else condtion) -------->
+
+    <h1>Ternary Operator Example</h1>
+
+    <div id="outputResult" class="result">
+      <p id="resultMessage"></p>
+    </div>
+    
+    <script>
+      const condition = false; 
+      const resultElement = document.getElementById("resultMessage");
+      
+      resultElement.textContent = condition ? "order recived" : "Somthing went wrong";
+      resultElement.classList.add(condition ? 'success' : 'error');
+</script>
+
+</body>
+</html>
+
+
